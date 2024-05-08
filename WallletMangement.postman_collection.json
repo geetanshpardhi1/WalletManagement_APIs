@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "e2509176-a51f-46fd-b876-19f51b1dd7da",
+		"name": "WallletMangement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31920195"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//it takes email,username,password,password2 as parameters\n{\n    \"email\": \"demo1@gmail.com\",\n    \"username\": \"geetanshpardhi\",\n    \"password\": \"superuser\",\n    \"password2\": \"superuser\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDAyNzY4LCJpYXQiOjE3MTA0MDI0NjgsImp0aSI6ImVkNWNkNGJmNTY1MTQ2YTliNDk3N2ZkZmFlMTdmZmZlIiwidXNlcl9pZCI6N30.J6yzxL6IES7nsAKqZrVSHAPmuSPhEnPBWwpHVD5jZpc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    //takes a refresh_token parameter for blacklisting users token for logging him out\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxMDQ4ODUzOCwiaWF0IjoxNzEwNDAyMTM4LCJqdGkiOiJiOThjMjI5ZDBhNDI0OTlhOGVmNTlmNDQzNDVkNTM2ZiIsInVzZXJfaWQiOjd9.DCAEUd5G9zRYUjGONBSgSwoiQQE8qX0bRtNpeyfptes\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//takes email,password as parameter\n{\n    \"email\":\"demo1@gmail.com\",\n    \"password\":\"superuser\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET expense category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTg5MzkyLCJpYXQiOjE3MTUxODkwOTIsImp0aSI6IjYxNjRiOGIzZjE0NzRmYzY4ZTcwZDAwOGQyNDhlODEwIiwidXNlcl9pZCI6Mn0.4ut_PTd1NopdEzoarlXm76P3j-f1_67VMyHADGTdkRE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/categories/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST expense category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTg5MzkyLCJpYXQiOjE3MTUxODkwOTIsImp0aSI6IjYxNjRiOGIzZjE0NzRmYzY4ZTcwZDAwOGQyNDhlODEwIiwidXNlcl9pZCI6Mn0.4ut_PTd1NopdEzoarlXm76P3j-f1_67VMyHADGTdkRE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"fashion\",\n    \"description\":\"anything\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/categories/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE expense category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTkxNjA4LCJpYXQiOjE3MTUxOTEzMDgsImp0aSI6ImEyZjM1Y2M0OThiMDQ2NzVhMjc2OWI5NTVkYTQ4MWQ1IiwidXNlcl9pZCI6Mn0.3jDOIflLhNfP-AUOV_MxkfyyTXxalAIBo6Pdw2dUImQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/categories/7/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST request for adding expense",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTkwNjE3LCJpYXQiOjE3MTUxOTAzMTcsImp0aSI6IjBhNTRjYzQ3MDE2ZTQ3Y2U5ZTQwODRhYjUzOGM4YmFlIiwidXNlcl9pZCI6Mn0.fxo6cVtRAZE2fsVysJ3lUh24EWH0KUEWv09s8OLBUY8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"Asus Rog\",\n    \"amount\":1000,\n    \"category\":6\n}\n//send title,amount, category as input ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/expenses/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"expenses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET request for viewing expense",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTkxOTM5LCJpYXQiOjE3MTUxOTE2MzksImp0aSI6ImIwNTI4MWNiOGRjYjQzNjY4Y2U3M2RkNWZiNTA3ZWY4IiwidXNlcl9pZCI6Mn0.gjqk37qv6SRnFNwnD1OWFSEYTMERd0WsUcOjHLsBGEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/expenses/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"expenses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET request for viewing grouped expense",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTkxOTM5LCJpYXQiOjE3MTUxOTE2MzksImp0aSI6ImIwNTI4MWNiOGRjYjQzNjY4Y2U3M2RkNWZiNTA3ZWY4IiwidXNlcl9pZCI6Mn0.gjqk37qv6SRnFNwnD1OWFSEYTMERd0WsUcOjHLsBGEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/expenses/grouped/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"expenses",
+						"grouped",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET request for viewing grouped expense monthly",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTkxOTM5LCJpYXQiOjE3MTUxOTE2MzksImp0aSI6ImIwNTI4MWNiOGRjYjQzNjY4Y2U3M2RkNWZiNTA3ZWY4IiwidXNlcl9pZCI6Mn0.gjqk37qv6SRnFNwnD1OWFSEYTMERd0WsUcOjHLsBGEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/expenses/category/8/monthly/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"expenses",
+						"category",
+						"8",
+						"monthly",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
